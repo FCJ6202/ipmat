@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPMAT Prep Roadmap — Free Resources</title>
+<style>
+:root{
+  --bg:#f4f5f9;
+  --surface:#ffffff;
+  --surface-2:#eceefa;
+  --border:#dadeee;
+  --ink:#1c1f2e;
+  --ink-soft:#4c516b;
+  --ink-faint:#8286a3;
+  --accent:#1f8a70;
+  --accent-ink:#ffffff;
+  --accent-soft:#e2f4ee;
+  --quant:#3b6fd9;
+  --quant-soft:#e8eefc;
+  --varc:#8a4fd9;
+  --varc-soft:#f1e9fc;
+  --lrdi:#c97a2b;
+  --lrdi-soft:#faeee0;
+  --done:#1f8a70;
+  --shadow: 0 1px 2px rgba(28,31,46,0.06), 0 8px 24px -12px rgba(28,31,46,0.12);
+  --radius: 14px;
+  --font-display: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12131c;
+    --surface:#1a1c29;
+    --surface-2:#22243380;
+    --border:#31334a;
+    --ink:#eef0fb;
+    --ink-soft:#b3b7d1;
+    --ink-faint:#787da0;
+    --accent:#4fcaa9;
+    --accent-ink:#0c1a16;
+    --accent-soft:#153328;
+    --quant:#7ba0f5;
+    --quant-soft:#1c2740;
+    --varc:#b98cf0;
+    --varc-soft:#2a2140;
+    --lrdi:#e0a24f;
+    --lrdi-soft:#3a2c17;
+    --done:#4fcaa9;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 30px -14px rgba(0,0,0,0.5);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12131c;
+  --surface:#1a1c29;
+  --surface-2:#22243380;
+  --border:#31334a;
+  --ink:#eef0fb;
+  --ink-soft:#b3b7d1;
+  --ink-faint:#787da0;
+  --accent:#4fcaa9;
+  --accent-ink:#0c1a16;
+  --accent-soft:#153328;
+  --quant:#7ba0f5;
+  --quant-soft:#1c2740;
+  --varc:#b98cf0;
+  --varc-soft:#2a2140;
+  --lrdi:#e0a24f;
+  --lrdi-soft:#3a2c17;
+  --done:#4fcaa9;
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 30px -14px rgba(0,0,0,0.5);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent-soft);}
+a{color:var(--accent);}
+button{font-family:inherit;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px;}
+
+/* Header */
+header.top{
+  border-bottom:1px solid var(--border);
+  background:var(--surface);
+}
+.header-inner{
+  max-width:1080px;margin:0 auto;padding:28px 20px 22px;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;
+}
+.brand-eyebrow{
+  font-family:var(--font-mono);
+  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--ink-faint);margin:0 0 6px;
+}
+h1{
+  font-family:var(--font-display);
+  font-size:clamp(26px,4vw,34px);
+  margin:0 0 6px;
+  font-weight:700;
+  text-wrap:balance;
+}
+.subtitle{color:var(--ink-soft);font-size:15px;margin:0;max-width:52ch;}
+.theme-toggle{
+  border:1px solid var(--border);background:var(--surface-2);color:var(--ink-soft);
+  border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;
+  display:flex;align-items:center;gap:6px;white-space:nowrap;
+}
+.theme-toggle:hover{border-color:var(--accent);color:var(--ink);}
+
+/* Progress summary */
+.progress-band{
+  display:flex;gap:28px;align-items:center;flex-wrap:wrap;
+  padding:16px 0 0;
+}
+.progress-stat{display:flex;flex-direction:column;gap:2px;}
+.progress-stat .num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:22px;font-weight:600;color:var(--ink);}
+.progress-stat .lbl{font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;}
+.progress-bar-outer{
+  flex:1;min-width:180px;height:8px;border-radius:999px;background:var(--surface-2);overflow:hidden;
+}
+.progress-bar-inner{
+  height:100%;background:linear-gradient(90deg,var(--accent),var(--quant));border-radius:999px;
+  transition:width .4s ease;width:0%;
+}
+
+/* Stepper nav */
+nav.phase-nav{
+  position:sticky;top:0;z-index:20;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+  margin-bottom:8px;
+}
+.phase-nav-inner{
+  max-width:1080px;margin:0 auto;padding:0 20px;
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
+}
+.phase-nav-inner::-webkit-scrollbar{display:none;}
+.phase-btn{
+  display:flex;align-items:center;gap:9px;
+  border:1px solid var(--border);background:var(--surface);color:var(--ink-soft);
+  border-radius:999px;padding:8px 16px 8px 10px;font-size:13.5px;cursor:pointer;white-space:nowrap;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.phase-btn .step-no{
+  font-family:var(--font-mono);font-size:11px;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--surface-2);color:var(--ink-faint);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.phase-btn[aria-selected="true"]{
+  background:var(--ink);color:var(--bg);border-color:var(--ink);
+}
+.phase-btn[aria-selected="true"] .step-no{background:var(--accent);color:var(--accent-ink);}
+.phase-btn:not([aria-selected="true"]):hover{border-color:var(--accent);color:var(--ink);}
+.phase-btn .pct{font-family:var(--font-mono);font-variant-numeric:tabular-nums;opacity:0.65;font-size:11.5px;}
+
+/* Filter row */
+.filter-row{
+  display:flex;gap:8px;align-items:center;padding:14px 0 22px;flex-wrap:wrap;
+}
+.filter-row .flabel{font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.chip{
+  border:1px solid var(--border);background:var(--surface);color:var(--ink-soft);
+  border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;
+}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg);}
+.chip[data-subject="Quantitative Aptitude"][aria-pressed="true"]{background:var(--quant);border-color:var(--quant);color:#fff;}
+.chip[data-subject="VARC"][aria-pressed="true"]{background:var(--varc);border-color:var(--varc);color:#fff;}
+.chip[data-subject="LRDI"][aria-pressed="true"]{background:var(--lrdi);border-color:var(--lrdi);color:#fff;}
+
+/* Phase section */
+.phase-section{display:none;}
+.phase-section.active{display:block;animation:fade .25s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.phase-head{padding:4px 0 18px;}
+.phase-head h2{font-family:var(--font-display);font-size:22px;margin:0 0 4px;}
+.phase-head p{margin:0;color:var(--ink-soft);font-size:14px;}
+
+.card-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+
+/* Card */
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:18px 20px 14px;border-bottom:1px solid var(--border);
+}
+.subject-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;font-weight:600;margin-bottom:8px;
+}
+.subject-tag.q{background:var(--quant-soft);color:var(--quant);}
+.subject-tag.v{background:var(--varc-soft);color:var(--varc);}
+.subject-tag.l{background:var(--lrdi-soft);color:var(--lrdi);}
+.card-head h3{margin:0 0 4px;font-family:var(--font-display);font-size:19px;}
+.card-head .objective{margin:0;color:var(--ink-soft);font-size:13.5px;max-width:56ch;}
+.card-progress{
+  font-family:var(--font-mono);font-size:12px;color:var(--ink-faint);text-align:right;
+  display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;
+}
+.ring{width:38px;height:38px;border-radius:50%;position:relative;flex-shrink:0;}
+.ring svg{transform:rotate(-90deg);}
+.ring circle{fill:none;stroke-width:4;}
+.ring .track{stroke:var(--surface-2);}
+.ring .fill{stroke:var(--accent);stroke-linecap:round;transition:stroke-dasharray .4s ease;}
+
+.card-body{padding:16px 20px 20px;display:flex;flex-direction:column;gap:16px;}
+
+.watch-btn{
+  display:flex;align-items:center;gap:10px;
+  border:1px solid var(--border);background:var(--surface-2);
+  border-radius:10px;padding:11px 14px;text-decoration:none;color:var(--ink);
+  font-size:14px;font-weight:600;transition:border-color .15s,transform .1s;
+}
+.watch-btn:hover{border-color:var(--accent);}
+.watch-btn:active{transform:scale(0.99);}
+.watch-btn .play-ico{
+  width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.watch-btn .play-ico svg{width:12px;height:12px;}
+.watch-btn .wb-text{display:flex;flex-direction:column;gap:1px;overflow:hidden;}
+.watch-btn .wb-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.watch-btn .wb-sub{font-weight:400;font-size:12px;color:var(--ink-faint);}
+
+.block-label{
+  font-size:11px;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink-faint);
+  margin:0 0 8px;font-weight:600;
+}
+.target-text{
+  font-size:13.5px;color:var(--ink-soft);background:var(--surface-2);
+  border-radius:10px;padding:11px 13px;margin:0;
+}
+.links-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
+.links-list a{
+  display:flex;align-items:center;gap:7px;font-size:13.5px;text-decoration:none;color:var(--ink);
+  padding:6px 0;border-bottom:1px dashed transparent;
+}
+.links-list a:hover{border-bottom-color:var(--accent);color:var(--accent);}
+.links-list a .arrow{color:var(--ink-faint);flex-shrink:0;}
+
+.steps-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;}
+.step-item{
+  display:flex;align-items:flex-start;gap:10px;padding:8px 4px;border-radius:8px;cursor:pointer;
+}
+.step-item:hover{background:var(--surface-2);}
+.step-item input{
+  appearance:none;-webkit-appearance:none;
+  width:19px;height:19px;border-radius:5px;border:1.5px solid var(--border);
+  flex-shrink:0;margin-top:1px;cursor:pointer;position:relative;background:var(--surface);
+}
+.step-item input:checked{background:var(--done);border-color:var(--done);}
+.step-item input:checked::after{
+  content:"";position:absolute;left:5px;top:1px;width:5px;height:9px;
+  border:solid var(--accent-ink);border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.step-item span{font-size:13.5px;color:var(--ink-soft);}
+.step-item input:checked ~ span{color:var(--ink-faint);text-decoration:line-through;}
+
+footer{
+  text-align:center;padding:36px 20px 10px;color:var(--ink-faint);font-size:12.5px;
+}
+footer a{color:var(--ink-faint);}
+
+@media(min-width:760px){
+  .card-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="header-inner">
+    <div>
+      <p class="brand-eyebrow">Free &amp; Open-Source Prep</p>
+      <h1>IPMAT Prep Roadmap</h1>
+      <p class="subtitle">One place for every YouTube lecture and free practice bank across the four-phase IPMAT / JIPMAT study plan — Quant, VARC and LRDI.</p>
+    </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+      <span id="themeIcon">🌙</span><span id="themeLabel">Dark</span>
+    </button>
+  </div>
+  <div class="wrap" style="padding-top:0;">
+    <div class="progress-band">
+      <div class="progress-stat"><span class="num" id="statDone">0/0</span><span class="lbl">Steps done</span></div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="overallBar"></div></div>
+      <div class="progress-stat"><span class="num" id="statPct">0%</span><span class="lbl">Overall</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="phase-nav">
+  <div class="phase-nav-inner" id="phaseNav"></div>
+</nav>
+
+<main class="wrap">
+  <div class="filter-row">
+    <span class="flabel">Filter subject</span>
+    <button class="chip" data-subject="all" aria-pressed="true">All</button>
+    <button class="chip" data-subject="Quantitative Aptitude" aria-pressed="false">Quant</button>
+    <button class="chip" data-subject="VARC" aria-pressed="false">VARC</button>
+    <button class="chip" data-subject="LRDI" aria-pressed="false">LRDI</button>
+  </div>
+  <div id="phaseSections"></div>
+</main>
+
+<footer>
+  Built from a free, open-source study plan. Progress is saved locally in this browser only.
+</footer>
+
+<script>
+const DATA = [
+  {
+    phase: "Phase 1: Foundation",
+    phaseSummary: "Build core concepts from scratch across Quant, VARC and LRDI — start here if you're new to the exam.",
+    subjects: [
+      {
+        subject: "Quantitative Aptitude",
+        tagClass: "q",
+        playlistName: "QUANTS | IPMAT FOUNDATION 2026",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O4ImYaAf6T0w8hKsJAM0QHv",
+        objective: "Build core concepts from scratch; essential for non-maths students.",
+        target: "Target: 30–40 questions per topic on Percentages, Ratios, Profit & Loss, Time & Work, Averages.",
+        links: [
+          {label:"Cracku Arithmetic Question Bank", url:"https://cracku.in/top-50-ipmat-arithmetic-questions-pdf/"},
+          {label:"Toprankers Arithmetic Questions", url:"https://www.toprankers.com/ipmat-arithmetic-questions"}
+        ],
+        steps: [
+          "Watch lecture on YouTube.",
+          "Solve 30-40 topic questions from the Cracku/Toprankers links.",
+          "Download lecture PDF from PW App (₹0 Batch) to review formulas."
+        ]
+      },
+      {
+        subject: "Quantitative Aptitude",
+        tagClass: "q",
+        playlistName: "IPMAT Complete Quant Pre-Foundation Course",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O6r1XP9KfdHWIE7i9oeJKQ3",
+        objective: "Basic calculation tricks; arithmetic foundations; and formulas.",
+        target: "Target: Basic calculation speed drills & 20 practice questions on arithmetic basics.",
+        links: [
+          {label:"Cracku IPMAT Free Study Material", url:"https://cracku.in/ipmat-study-material/"}
+        ],
+        steps: [
+          "Practice mental math and calculation shortcuts daily for 15 mins.",
+          "Complete basic arithmetic speed drills from Cracku."
+        ]
+      },
+      {
+        subject: "VARC",
+        tagClass: "v",
+        playlistName: "VARC | IPMAT 2026 FOUNDATION",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O6CUcGsCoJqKHS3PBfQiGoF",
+        objective: "Grammar rules; foundational vocabulary; and basic reading speed strategies.",
+        target: "Target: 15–20 questions per topic on Nouns/Verbs Grammar Rules & Vocab Root Words; 3 RC Passages daily.",
+        links: [
+          {label:"Cracku VARC Practice PDF", url:"https://cracku.in/most-expected-ipmat-2026-verbal-ability-questions-pdf/"},
+          {label:"Open RC Reading — Aeon Essays", url:"https://aeon.co/essays"}
+        ],
+        steps: [
+          "Read 1 Aeon essay daily for speed and comprehension.",
+          "Solve 15-20 grammar/vocab questions per lecture.",
+          "Record 10 new vocabulary words daily."
+        ]
+      },
+      {
+        subject: "LRDI",
+        tagClass: "l",
+        playlistName: "LRDI | IPMAT FOUNDATION 2026",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O4t4S6rNuzNaFpP6jkuxoBa",
+        objective: "Understanding basic data representation; series; and linear arrangements.",
+        target: "Target: 1 DPP set per lecture + Linear & Circular arrangement sets; Coding-Decoding questions.",
+        links: [
+          {label:"Toprankers LRDI Sample Papers", url:"https://www.toprankers.com/ipmat-sample-paper"}
+        ],
+        steps: [
+          "Solve 1 DPP set on PW app post-lecture.",
+          "Practice 2 linear/circular seating arrangement sets daily from Toprankers."
+        ]
+      }
+    ]
+  },
+  {
+    phase: "Phase 2: Deep Dive",
+    phaseSummary: "Move from basics to full syllabus coverage and higher-difficulty topics.",
+    subjects: [
+      {
+        subject: "Quantitative Aptitude",
+        tagClass: "q",
+        playlistName: "Quants | IPMAT Path Finder 2026",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O4T9wqEpXY6DRWr_jvGBDfq",
+        objective: "Advanced topic-wise coverage of Higher Math (Functions; Matrices; P&C; Probability).",
+        target: "Target: 20–25 Non-MCQ / SA questions on Logarithms, Matrices, Functions, P&C, Probability, Quadratic Equations.",
+        links: [
+          {label:"PW IPMAT Papers & Higher Math Sets", url:"https://www.pw.live/ipmat/exams/ipmat-question-papers"},
+          {label:"Scribd IPM Sample Paper PDF", url:"https://www.scribd.com/document/404541337/IPM-Sample-Paper-AT-pdf"}
+        ],
+        steps: [
+          "Watch lecture and take handwritten notes on formulas.",
+          "Solve 20-25 Short Answer (SA) questions without looking at options.",
+          "Cross-check answers using PW step-by-step solutions."
+        ]
+      },
+      {
+        subject: "Quantitative Aptitude",
+        tagClass: "q",
+        playlistName: "Complete Quants for IPMAT 2026",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O4Emv5usgH8C_Sf33SfMDdm",
+        objective: "Full syllabus coverage for IPMAT Indore; Rohtak; and JIPMAT.",
+        target: "Target: 1 DPP (10 Questions) per lecture + 20 additional practice bank questions.",
+        links: [
+          {label:"PW Free Practice Bank", url:"https://www.pw.live/ipmat/exams/ipmat-question-papers"}
+        ],
+        steps: [
+          "Complete lecture and attempt matching app DPP.",
+          "Resolve doubt questions using video solutions."
+        ]
+      },
+      {
+        subject: "VARC",
+        tagClass: "v",
+        playlistName: "Complete VARC for IPMAT 2026",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O5b9i2sLqsFnygu9_WX6p2R",
+        objective: "Comprehensive practice for Reading Comprehension; Para-jumbles & Critical Reasoning.",
+        target: "Target: 15–20 questions per topic on Para-jumbles, Sentence Correction, Vocabulary & Critical Reasoning.",
+        links: [
+          {label:"Cracku VARC Question Bank", url:"https://cracku.in/most-expected-ipmat-2026-verbal-ability-questions-pdf/"}
+        ],
+        steps: [
+          "Solve 3 RC passages under 25-minute timer.",
+          "Complete 15 Critical Reasoning & Para-jumble practice sets."
+        ]
+      }
+    ]
+  },
+  {
+    phase: "Phase 3: Revision",
+    phaseSummary: "Fast, high-yield revision lectures with one full timed mock per subject.",
+    subjects: [
+      {
+        subject: "VARC",
+        tagClass: "v",
+        playlistName: "VARC ONE SHOT | IPMAT + JIPMAT",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O4QDLofobc6yKCcT4IV5O0k",
+        objective: "High-yield speed revision lectures summarizing key verbal concepts.",
+        target: "Target: Solve 1 complete VARC mock section (30+ questions) post-revision.",
+        links: [
+          {label:"Toprankers Free Mock Section", url:"https://www.toprankers.com/ipmat-sample-paper"}
+        ],
+        steps: [
+          "Watch full One-Shot video for quick revision.",
+          "Take a timed section mock for VARC."
+        ]
+      },
+      {
+        subject: "Quantitative Aptitude",
+        tagClass: "q",
+        playlistName: "QUANTS ONE SHOT | IPMAT + JIPMAT",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O6ULH8m_RZ3QKG04gQWxo63",
+        objective: "Fast-track formula revision and topic-wise formula application.",
+        target: "Target: Solve 1 complete Quants mock section (SA & MCQ) post-revision.",
+        links: [
+          {label:"PW IPMAT Question Papers", url:"https://www.pw.live/ipmat/exams/ipmat-question-papers"}
+        ],
+        steps: [
+          "Review formula sheet during lecture.",
+          "Attempt 30 Quants questions under timed test conditions."
+        ]
+      },
+      {
+        subject: "LRDI",
+        tagClass: "l",
+        playlistName: "LRDI ONE SHOT | IPMAT + JIPMAT",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O5gCUNlW91-Z7sjbFxxRx7l",
+        objective: "Quick review of high-frequency LR puzzles and Data Interpretation formats.",
+        target: "Target: 4–5 DI sets daily (Bar, Pie, Radar) + 3–4 Complex sets (Matrix, Seating).",
+        links: [
+          {label:"MyPrepWay LRDI Collection (Scribd)", url:"https://www.scribd.com/document/665536209/Past-Year-Papers-Ipmat-Myprepway"}
+        ],
+        steps: [
+          "Watch puzzle-solving strategies.",
+          "Solve 4 DI sets and 3 LR puzzles daily."
+        ]
+      }
+    ]
+  },
+  {
+    phase: "Phase 4: Exam Practice",
+    phaseSummary: "Full previous-year papers under real timed conditions, with careful post-mortem.",
+    subjects: [
+      {
+        subject: "Quantitative Aptitude",
+        tagClass: "q",
+        playlistName: "IPMAT PYQs & Mock Solutions",
+        playlistUrl: "http://www.youtube.com/playlist?list=PLgdPaCCJt3O5Tsr2nzKsoMGdaz9SAxfUH",
+        objective: "Exam endurance and time management shortcuts under timed conditions.",
+        target: "Target: Past 5 Years actual papers of IPMAT Indore, IPMAT Rohtak, and JIPMAT under timed mock conditions.",
+        links: [
+          {label:"Cracku IPMAT PYQ Papers", url:"https://cracku.in/ipmat-previous-papers/"},
+          {label:"PW Official PYQ PDF Section", url:"https://www.pw.live/ipmat/exams/ipmat-question-papers"}
+        ],
+        steps: [
+          "Attempt 1 full PYQ paper (Indore/Rohtak/JIPMAT) in a single sitting (2 hours).",
+          "Analyze incorrect and unattempted questions thoroughly.",
+          "Re-watch video solutions for missed topics."
+        ]
+      }
+    ]
+  }
+];
+
+const STORAGE_KEY = "ipmat-roadmap-progress-v1";
+const THEME_KEY = "ipmat-roadmap-theme";
+
+function loadProgress(){
+  try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(e){ return {}; }
+}
+function saveProgress(p){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+}
+let progress = loadProgress();
+
+function stepKey(pi, si, ti){ return pi + "-" + si + "-" + ti; }
+
+function playIcon(){
+  return '<svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1.5v9l8-4.5-8-4.5z"/></svg>';
+}
+function arrowIcon(){
+  return '<svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9l6-6M9 3H4M9 3v5"/></svg>';
+}
+
+function ringSVG(pct){
+  const r = 15, c = 2*Math.PI*r;
+  const dash = (pct/100)*c;
+  return `<svg width="38" height="38" viewBox="0 0 38 38">
+    <circle class="track" cx="19" cy="19" r="${r}"></circle>
+    <circle class="fill" cx="19" cy="19" r="${r}" stroke-dasharray="${dash} ${c}"></circle>
+  </svg>`;
+}
+
+function subjectCardHTML(pi, si, s){
+  const total = s.steps.length;
+  let done = 0;
+  s.steps.forEach((_, ti) => { if(progress[stepKey(pi,si,ti)]) done++; });
+  const pct = total ? Math.round((done/total)*100) : 0;
+
+  const linksHTML = s.links.map(l =>
+    `<li><a href="${l.url}" target="_blank" rel="noopener">${arrowIcon()}${l.label}</a></li>`
+  ).join("");
+
+  const stepsHTML = s.steps.map((step, ti) => {
+    const key = stepKey(pi,si,ti);
+    const checked = progress[key] ? "checked" : "";
+    return `<label class="step-item">
+      <input type="checkbox" data-key="${key}" ${checked}>
+      <span>${step}</span>
+    </label>`;
+  }).join("");
+
+  const tagLabel = s.subject === "Quantitative Aptitude" ? "Quant" : s.subject;
+
+  return `<article class="card" data-subject="${s.subject}">
+    <div class="card-head">
+      <div>
+        <span class="subject-tag ${s.tagClass}">${tagLabel}</span>
+        <h3>${s.playlistName}</h3>
+        <p class="objective">${s.objective}</p>
+      </div>
+      <div class="card-progress">
+        <div class="ring">${ringSVG(pct)}</div>
+        <span>${done}/${total}</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <a class="watch-btn" href="${s.playlistUrl}" target="_blank" rel="noopener">
+        <span class="play-ico">${playIcon()}</span>
+        <span class="wb-text">
+          <span class="wb-title">Watch on YouTube</span>
+          <span class="wb-sub">${s.playlistName}</span>
+        </span>
+      </a>
+      <div>
+        <p class="block-label">Practice target</p>
+        <p class="target-text">${s.target}</p>
+      </div>
+      <div>
+        <p class="block-label">Free practice links</p>
+        <ul class="links-list">${linksHTML}</ul>
+      </div>
+      <div>
+        <p class="block-label">Do this</p>
+        <ul class="steps-list">${stepsHTML}</ul>
+      </div>
+    </div>
+  </article>`;
+}
+
+function phaseProgress(pi){
+  const phase = DATA[pi];
+  let total = 0, done = 0;
+  phase.subjects.forEach((s, si) => {
+    s.steps.forEach((_, ti) => {
+      total++;
+      if(progress[stepKey(pi,si,ti)]) done++;
+    });
+  });
+  return {total, done, pct: total ? Math.round((done/total)*100) : 0};
+}
+
+function overallProgress(){
+  let total = 0, done = 0;
+  DATA.forEach((phase, pi) => {
+    phase.subjects.forEach((s, si) => {
+      s.steps.forEach((_, ti) => {
+        total++;
+        if(progress[stepKey(pi,si,ti)]) done++;
+      });
+    });
+  });
+  return {total, done, pct: total ? Math.round((done/total)*100) : 0};
+}
+
+let activePhase = 0;
+
+function renderNav(){
+  const nav = document.getElementById("phaseNav");
+  nav.innerHTML = DATA.map((phase, pi) => {
+    const p = phaseProgress(pi);
+    return `<button class="phase-btn" data-phase="${pi}" aria-selected="${pi===activePhase}">
+      <span class="step-no">${pi+1}</span>
+      <span>${phase.phase.replace(/^Phase \d+:\s*/,'')}</span>
+      <span class="pct">${p.pct}%</span>
+    </button>`;
+  }).join("");
+  nav.querySelectorAll(".phase-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activePhase = parseInt(btn.dataset.phase, 10);
+      render();
+      document.getElementById(`phase-${activePhase}`)?.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+}
+
+let subjectFilter = "all";
+
+function renderSections(){
+  const container = document.getElementById("phaseSections");
+  container.innerHTML = DATA.map((phase, pi) => {
+    const cards = phase.subjects
+      .map((s, si) => ({s, si}))
+      .filter(({s}) => subjectFilter === "all" || s.subject === subjectFilter)
+      .map(({s, si}) => subjectCardHTML(pi, si, s))
+      .join("");
+    return `<section class="phase-section ${pi===activePhase?'active':''}" id="phase-${pi}">
+      <div class="phase-head">
+        <h2>${phase.phase}</h2>
+        <p>${phase.phaseSummary}</p>
+      </div>
+      <div class="card-grid">${cards}</div>
+    </section>`;
+  }).join("");
+
+  container.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener("change", () => {
+      progress[cb.dataset.key] = cb.checked;
+      saveProgress(progress);
+      render(true);
+    });
+  });
+}
+
+function renderStats(){
+  const o = overallProgress();
+  document.getElementById("statDone").textContent = `${o.done}/${o.total}`;
+  document.getElementById("statPct").textContent = `${o.pct}%`;
+  document.getElementById("overallBar").style.width = `${o.pct}%`;
+}
+
+function render(keepScroll){
+  renderNav();
+  renderSections();
+  renderStats();
+}
+
+document.getElementById("phaseNav")?.addEventListener("click", () => {});
+
+document.querySelectorAll(".chip").forEach(chip => {
+  chip.addEventListener("click", () => {
+    subjectFilter = chip.dataset.subject;
+    document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === chip ? "true" : "false"));
+    renderSections();
+  });
+});
+
+/* Theme toggle: cycles system -> light -> dark -> system */
+function applyTheme(theme){
+  if(theme === "light" || theme === "dark"){
+    document.documentElement.setAttribute("data-theme", theme);
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+  const icon = document.getElementById("themeIcon");
+  const label = document.getElementById("themeLabel");
+  if(theme === "light"){ icon.textContent = "☀️"; label.textContent = "Light"; }
+  else if(theme === "dark"){ icon.textContent = "🌙"; label.textContent = "Dark"; }
+  else { icon.textContent = "🖥️"; label.textContent = "Auto"; }
+}
+let currentTheme = localStorage.getItem(THEME_KEY) || "auto";
+applyTheme(currentTheme);
+document.getElementById("themeToggle").addEventListener("click", () => {
+  currentTheme = currentTheme === "auto" ? "light" : currentTheme === "light" ? "dark" : "auto";
+  localStorage.setItem(THEME_KEY, currentTheme);
+  applyTheme(currentTheme);
+});
+
+render();
+</script>
+</body>
+</html>
